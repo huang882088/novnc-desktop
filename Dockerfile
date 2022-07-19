@@ -41,7 +41,7 @@ RUN mkdir -p /root/.config/tint2
 COPY tint2rc /root/.config/tint2/
 
 RUN dpkg --add-architecture i386 && apt-get update && \
-    apt-get install wine32
+    apt-get install -y wine32
 
 RUN apt-get install -y wine winetricks
 
