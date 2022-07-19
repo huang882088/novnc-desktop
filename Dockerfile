@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN  apt-get update -y && \
 apt-get install -y language-pack-zh-hans  && \
-locale-gen zh_CN.UTF-8 && /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+locale-gen zh_CN.UTF-8 && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
 echo 'Asia/Shanghai' > /etc/timezone && update-locale LANG=zh_CN.UTF-8 LC_ALL=zh_CN.UTF-8
 
 ENV LANG='zh_CN.UTF-8'
