@@ -7,6 +7,15 @@ RUN go mod init build && \
 FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive 
 
+RUN  apt-get update -y && \
+apt-get install -y language-pack-zh-hans  && \
+locale-gen zh_CN.UTF-8 && /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+echo 'Asia/Shanghai' > /etc/timezone && update-locale LANG=zh_CN.UTF-8 LC_ALL=zh_CN.UTF-8
+
+ENV LANG='zh_CN.UTF-8'
+ENV LANGUAGE='zh_CN:zh:en_US:en'
+ENV LC_ALL='zh_CN.UTF-8'
+
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends openbox tint2 xdg-utils lxterminal hsetroot tigervnc-standalone-server supervisor && \
     rm -rf /var/lib/apt/lists
