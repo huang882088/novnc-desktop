@@ -7,6 +7,9 @@ RUN go mod init build && \
 FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive 
 
+RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
+RUN apt-get update -y
+
 RUN  apt-get update -y && \
 apt-get install -y language-pack-zh-hans  && \
 locale-gen zh_CN.UTF-8 && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
