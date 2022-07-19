@@ -16,6 +16,8 @@ ENV LANG='zh_CN.UTF-8'
 ENV LANGUAGE='zh_CN:zh:en_US:en'
 ENV LC_ALL='zh_CN.UTF-8'
 
+RUN apt-get install -y fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
+
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends openbox tint2 xdg-utils lxterminal hsetroot tigervnc-standalone-server supervisor && \
     rm -rf /var/lib/apt/lists
