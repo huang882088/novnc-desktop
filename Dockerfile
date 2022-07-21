@@ -43,7 +43,7 @@ COPY tint2rc /root/.config/tint2/
 RUN dpkg --add-architecture i386 && apt-get update && \
     apt-get install -y wine32
 
-RUN apt-get install -y wine winetricks
+RUN apt-get install -y wine winetricks winbind
 
 EXPOSE 8080
 ENTRYPOINT ["/bin/bash", "-c", "/usr/bin/supervisord"]
