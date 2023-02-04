@@ -1,7 +1,7 @@
 # novnc-desktop
 A relatively small noVNC (web-based) desktop Docker image
 
-Docker image: https://hub.docker.com/r/prbinu/novnc-desktop
+Docker image: https://hub.docker.com/r/huang882088/ubuntu-novnc-wine
 
 ## Features
 * Ubuntu Focal Docker base image
