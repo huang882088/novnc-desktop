@@ -36,7 +36,7 @@ docker build --squash -t prbinu/novnc-desktop -f Dockerfile .
 ### Run
 
 ```bash
-docker run -p 8080:8080 -e "TZ=America/Los_Angeles" prbinu/novnc-desktop
+docker run -p 8080:8080 -e "TZ=Asia/Shanghai" prbinu/novnc-desktop:latest
 ```
 In browser, open: `http://localhost:8080/
 `
